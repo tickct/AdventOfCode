@@ -1,26 +1,34 @@
-import fs from 'fs';
+import fs from 'fs'
 
 const toData = (path) => {
-  try{
+  try {
     const data = fs.readFileSync(path, 'utf8')
-    return data;
-  }
-  catch {
-    console.log('Err: unable to read '+ path)
+    return data
+  } catch {
+    console.log('Err: unable to read ' + path)
   }
 }
 
 export const toDataFormatted = (localPath, ...formatFns) => {
   const data = toData(localPath)
-  return formatFns.reduce((val,fn) => {
+  return formatFns.reduce((val, fn) => {
     return fn(val)
-  }, data);
+  }, data)
 }
 
-export const splitLine = val => val.split('\n').map(v => v.trim())
-export const splitComma = val => val.split(',').map(v => v.trim())
-export const splitAll = arr => arr.map(x => x.split('').map(v => v.trim()).filter(x => x));
+export const splitLine = (val) => val.split('\n').map((v) => v.trim())
+export const splitComma = (val) => val.split(',').map((v) => v.trim())
+export const splitAll = (arr) =>
+  arr.map((x) =>
+    x
+      .split('')
+      .map((v) => v.trim())
+      .filter((x) => x)
+  )
 
-
-export const sum = arr => arr.reduce((count, next) => parseInt(next)+count,0);
-export const chain = (...fns) => start => fns.reduce((val, fn) => fn(val),start);
+export const sum = (arr) =>
+  arr.reduce((count, next) => parseInt(next) + count, 0)
+export const chain =
+  (...fns) =>
+  (start) =>
+    fns.reduce((val, fn) => fn(val), start)

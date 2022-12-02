@@ -4,7 +4,14 @@
     "node-fetch": "^3.1.0"
   },
   "devDependencies": {
-    "eslint": "^8.4.0"
+    "eslint": "^8.4.0",
+    "prettier": "^2.8.0"
   },
-  "type": "module"
+  "type": "module",
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "singleQuote": true,
+    "semi": false
+  }
 }
