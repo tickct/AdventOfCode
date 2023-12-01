@@ -92,15 +92,13 @@ const countsV2 = (countObj, start) =>
   Object.values(
     Object.entries(countObj).reduce(
       (singleCounts, [pair, count]) => {
-        return pair
-          .split('')
-          .reduce(
-            (runningCount, next) => ({
-              ...runningCount,
-              [next]: (runningCount[next] || 0) + count,
-            }),
-            singleCounts
-          )
+        return pair.split('').reduce(
+          (runningCount, next) => ({
+            ...runningCount,
+            [next]: (runningCount[next] || 0) + count,
+          }),
+          singleCounts
+        )
       },
       {
         [toFirst(start)]: 1,

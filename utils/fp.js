@@ -3,7 +3,6 @@ export const sum = (arr) =>
     return parseInt(next) + count
   }, 0)
 
-  
 export const chain =
   (...fns) =>
   (start) =>
