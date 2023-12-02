@@ -10,13 +10,18 @@ const toData = (path: string): string => {
   }
 }
 
-export const toDataFormatted = (localPath: string, formatFn: (x: string) => string[]) => {
+export const toDataFormatted = (
+  localPath: string,
+  formatFn: (x: string) => string[]
+) => {
   const data = toData(localPath)
   return formatFn(data)
 }
 
-export const splitLine = (val:string): string[] => val.split('\n').map((v) => v.trim())
-export const splitComma = (val:string): string[] => val.split(',').map((v) => v.trim())
+export const splitLine = (val: string): string[] =>
+  val.split('\n').map((v) => v.trim())
+export const splitComma = (val: string): string[] =>
+  val.split(',').map((v) => v.trim())
 export const splitAll = (arr: string[]): string[][] =>
   arr.map((x) =>
     x
