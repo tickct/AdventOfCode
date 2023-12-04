@@ -12,5 +12,6 @@
       "ES2022"
     ]
   },
+  "sourceMap": true,
   "include": ["**/*.ts"]
 }
